@@ -70,6 +70,6 @@ export default class Rockets {
   }
   updateFuel = () => {
 
-    let burn = setInterval(this.burnFuel, 10);
+    let burn = setInterval(this.burnFuel, 1000);
   }
 };
