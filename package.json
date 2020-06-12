@@ -1,0 +1,29 @@
+{
+    "name": "Rockets",
+    "version": "1.0.0",
+    "description": "Recreate all rockets from the SpaceX API and visualize them on the page",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.17.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Ninghizhidda/SpaceX_Rockets/"
+    },
+    "keywords": [
+        "rockets",
+        "game"
+    ],
+    "author": {
+        "name": "Daniela Vaseva",
+        "email": "dadano@abv.bg"
+    },
+    "license": "",
+    "bugs": {
+        "url": "https://github.com/Ninghizhidda/SpaceX_Rockets/issues"
+    },
+    "homepage": "https://ninghizhidda.github.io/SpaceX_Rockets/"
+}
