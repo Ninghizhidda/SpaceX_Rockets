@@ -31,4 +31,5 @@ Resources:
 
 SpaceX API: https://api.spacexdata.com/v2/rockets
 Assets available in the assets folder in the archive
+
 Anime.js
