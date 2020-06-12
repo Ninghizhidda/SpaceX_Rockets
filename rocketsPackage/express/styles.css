@@ -1,0 +1,92 @@
+body, html{
+  font-size: 25px;
+  font-family: "Arial", "Helvetica", "Verdana", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  background-image: url("assets/bg.jpg");
+  background-color: #000;
+  color: #727271;
+}
+.canvasDiv{
+  height: 100vh;
+  position: absolute;
+}
+.canvasDiv >*{
+  position: absolute;
+  top: 80vh;
+}
+.animRockets{
+  position: absolute;
+  top: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+animImg{
+
+}
+#rocketImg{
+  display: none;
+  width: 66px;
+  height: 100px;
+}
+
+#rocketTopImg{
+  display: none;
+  width: 66px;
+  height: 67px;
+}
+#showFuel{
+  position: absolute;
+  left: 100px;
+}
+#success{
+  position: absolute;
+  left: 46%;
+  top: 30vh;
+  font-size: 28px;
+}
+#successButton{
+  position: absolute;
+  left: 46%;
+  top: 60vh;
+  padding: 10px;
+  font-size: 24px;
+  background-color: #000;
+  color: #727271;
+  border-color: #727271;
+}
+.toggleDisplay{
+  display:none;
+}
+#showFuel span{
+  padding: 20px;
+  font-size: 18px;
+}
+#btn{
+  margin: 10px;
+  background-color: #000;
+  color: #727271;
+  border-color: #727271;
+  position: absolute;
+}
+
+/* flexbox layout*/
+.fc {
+  display: flex;
+  flex-flow: row wrap;
+}
+.fc > * {
+  flex: 1;
+}
+/* flex-container >= viewport*/
+.fc { min-height: 100vh; }
+
+.fc > * {
+  min-width: 100px;
+  padding: 0px;
+  vertical-align: bottom;
+  display: inline-block;
+  align-self: flex-end;
+}
