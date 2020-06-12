@@ -10,6 +10,8 @@ The app can be loaded on localehost with these steps:
 3. Open your web browser and enter this URL - localhost:3000
 
 
+Description:
+
 Recreate all rockets from the SpaceX API and visualize them on the page. At first, all rockets should be at the bottom of the stage and should launch at the same time and should move towards the top of the stage. All rockets have a certain amount of fuel (first_stage, second_stage).
 
 Requirements:
@@ -38,4 +40,6 @@ Resources:
 SpaceX API: https://api.spacexdata.com/v2/rockets
 Assets available in the assets folder in the archive
 
-Anime.js
+anime.js
+
+server.js
