@@ -2,7 +2,7 @@
 
 Rockets game
 
-https://ninghizhidda.github.io/Rockets/
+https://ninghizhidda.github.io/SpaceX_Rockets/
 
 Recreate all rockets from the SpaceX API and visualize them on the page. At first, all rockets should be at the bottom of the stage and should launch at the same time and should move towards the top of the stage. All rockets have a certain amount of fuel (first_stage, second_stage).
 
