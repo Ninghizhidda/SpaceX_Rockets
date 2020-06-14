@@ -1,5 +1,3 @@
-import * as Rocket from './rocket.js';
-
 export default class Rockets {
   constructor() {
     this.rocketsArray = [];
@@ -16,26 +14,7 @@ export default class Rockets {
     //console.log(count);
     return count;
   }
-  hideRocket = (id) => {
-    let elId = `i${id}`;
-    document.getElementById(elId).classList.add("toggleDisplay");
-  }
-  hideRocketBottom = (id) => {
-    let elId = `i${id}`;
-    document.getElementById(elId).querySelector('.rBottom').classList.add("toggleDisplay");
-  }
-  successMessage() {
-    let size = this.numberRocketsCreated();
-    let succeededStage3 = this.numberRocketsStage3();
-    //console.log(succeededStage3);
-    if (size == succeededStage3) {
-      document.getElementById("success").classList.remove("toggleDisplay");
-      document.getElementById("successButton").classList.remove("toggleDisplay");
-      //console.log("success");
-    }
-    return succeededStage3;
-  }
-  manageStage() {
+  manageStage = () => {
     this.rocketsArray.forEach((item, i) => {
       if ((this.rocketsArray[i].stageNumber == 1) && (this.rocketsArray[i].fuelLeft <= 0)) {
         this.rocketsArray[i].fuelLeft = this.rocketsArray[i].fuel2;
@@ -69,7 +48,25 @@ export default class Rockets {
     });
   }
   updateFuel = () => {
-
     let burn = setInterval(this.burnFuel, 1000);
+  }
+  hideRocket = (id) => {
+    let elId = `i${id}`;
+    document.getElementById(elId).classList.add("toggleDisplay");
+  }
+  hideRocketBottom = (id) => {
+    let elId = `i${id}`;
+    document.getElementById(elId).querySelector('.rBottom').classList.add("toggleDisplay");
+  }
+  successMessage = () => {
+    let size = this.numberRocketsCreated();
+    let succeededStage3 = this.numberRocketsStage3();
+    //console.log(succeededStage3);
+    if (size == succeededStage3) {
+      document.getElementById("success").classList.remove("toggleDisplay");
+      document.getElementById("successButton").classList.remove("toggleDisplay");
+      //console.log("success");
+    }
+    return succeededStage3;
   }
 };

@@ -1,12 +1,5 @@
-import anime from './animejs/lib/anime.es.js';
 import Rocket from './modules/rocket.js';
 import Rockets from './modules/rockets.js';
-
-let imgSrc = "assets/rocket.png";
-let imgSrc2 = "assets/rocket_top.png";
-let imgSrc3 = "assets/rocket_bottom.png";
-let imgSrcFuel = "assets/thrust.png";
-const endpoint = "https://api.spacexdata.com/v3/rockets"
 
 // Load page
 function load() {
@@ -24,7 +17,7 @@ function load() {
       //console.log(r);
       //console.log(rocketContainer);
       rocketContainer.rocketsArray.push(r);
-      console.log(rocketContainer.rocketsArray);
+      //console.log(rocketContainer.rocketsArray);
     });
     rocketContainer.rocketsArray.forEach((item, i) => {
        item.draw(i);
@@ -36,6 +29,7 @@ function load() {
       rocketContainer.rocketsArray.forEach((item, i) => {
          item.stageNumber = 1;
          item.fuelLeft = item.fuel1;
+         item.animRestart();
       });
       document.querySelectorAll('.animRockets').forEach((item, i) => {
         item.classList.remove("toggleDisplay");

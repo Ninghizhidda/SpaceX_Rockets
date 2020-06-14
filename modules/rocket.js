@@ -1,5 +1,3 @@
-import * as Rockets from './rockets.js';
-
 let imgSrc = "assets/rocket.png";
 let imgSrc2 = "assets/rocket_top.png";
 let imgSrc3 = "assets/rocket_bottom.png";
@@ -13,9 +11,13 @@ export default class Rocket {
     this.fuel2 = Math.round(fuel2);
     this.fuelLeft = this.fuel1;
     this.stageNumber = 1;
+    this.moveAnimation = anime.timeline({
+      targets: '.canvasDiv div',
+      easing: 'easeInOutSine'
+    });
   }
 
-  draw(i) {
+  draw = (i) => {
     const rocketVisualizer = document.querySelector('.canvasDiv');
     const animRockets = document.querySelectorAll('.animRockets');
     const fragment = document.createDocumentFragment();
@@ -29,6 +31,7 @@ export default class Rocket {
       let x = document.createElement("IMG");
       x.setAttribute("src", imgSrc2);
       x.classList.add("animImg");
+      x.setAttribute("alt", "Rocket");
 
       let x1 = document.createElement("IMG");
       x1.setAttribute("src", imgSrc3);
@@ -39,33 +42,38 @@ export default class Rocket {
       x2.classList.add("thrust");
 
       dv.style.left = posLeft;
-      x.setAttribute("alt", "Rocket");
       dv.appendChild(x);
       dv.appendChild(x1);
       dv.appendChild(x2);
       fragment.appendChild(dv);
     }
-
-    if (this.stageNumber != 3) {
       //console.log(`draw rocket${this.id} stage ${this.stageNumber}`);
       animRocket(fragment, pos);
       rocketVisualizer.appendChild(fragment);
-    }
   }
-  move() {
-    const moveAnimation = anime.timeline({
-      targets: '.canvasDiv div',
-      translateY: -600,
-      duration: 60000,
-      easing: 'easeInOutSine',
-      loop: true
-    });
 
-    moveAnimation
+  move = () => {
+    this.moveAnimation
     .add({
       targets: '.canvasDiv div',
-      translateY: -600,
-      duration: 60000,
+      translateY: -550,
+      duration: 100000,
+      loop: true
+    });
+  }
+  animRestart = () => {
+    this.moveAnimation.restart;
+    this.moveAnimation
+    .add({
+      targets: '.canvasDiv div',
+      translateY: 0,
+      duration: 10
+    })
+    .add({
+      targets: '.canvasDiv div',
+      translateY: -550,
+      duration: 100000,
+      loop: true
     });
   }
 }
