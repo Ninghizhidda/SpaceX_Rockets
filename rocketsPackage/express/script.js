@@ -86,6 +86,10 @@ class Rocket {
     this.fuel2 = Math.round(fuel2);
     this.fuelLeft = this.fuel1;
     this.stageNumber = 1;
+    this.moveAnimation = anime.timeline({
+      targets: '.canvasDiv div',
+      easing: 'easeInOutSine'
+    });
   }
 
   draw(i) {
@@ -126,23 +130,28 @@ class Rocket {
       rocketVisualizer.appendChild(fragment);
     }
   }
-  move() {
-    //setInterval( draw, 1000, rocket );
-    const moveAnimation = anime.timeline({
-      targets: '.canvasDiv div',
-    //anime({
-      //targets: animRockets,
-      translateY: -600,
-      duration: 60000,
-      easing: 'easeInOutSine',
-      loop: true
-    });
-
-    moveAnimation
+  move = () => {
+    this.moveAnimation
     .add({
       targets: '.canvasDiv div',
-      translateY: -600,
-      duration: 60000,
+      translateY: -550,
+      duration: 100000,
+      loop: true
+    });
+  }
+  animRestart = () => {
+    this.moveAnimation.restart;
+    this.moveAnimation
+    .add({
+      targets: '.canvasDiv div',
+      translateY: 0,
+      duration: 10
+    })
+    .add({
+      targets: '.canvasDiv div',
+      translateY: -550,
+      duration: 100000,
+      loop: true
     });
   }
 }
@@ -176,6 +185,7 @@ function load() {
       rocketContainer.rocketsArray.forEach((item, i) => {
          item.stageNumber = 1;
          item.fuelLeft = item.fuel1;
+         item.animRestart();
       });
       document.querySelectorAll('.animRockets').forEach((item, i) => {
         item.classList.remove("toggleDisplay");

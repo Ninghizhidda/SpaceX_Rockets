@@ -23,20 +23,6 @@ body, html{
   align-items: center;
   flex-flow: column wrap;
 }
-animImg{
-
-}
-#rocketImg{
-  display: none;
-  width: 66px;
-  height: 100px;
-}
-
-#rocketTopImg{
-  display: none;
-  width: 66px;
-  height: 67px;
-}
 #showFuel{
   position: absolute;
   left: 100px;
