@@ -2,11 +2,12 @@
     "name": "Rockets",
     "version": "1.0.0",
     "description": "Recreate all rockets from the SpaceX API and visualize them on the page",
-    "main": "server.js",
+    "main": "express/main.js",
     "scripts": {
         "start": "node server.js"
     },
     "dependencies": {
+        "animejs": "^3.2.0",
         "express": "^4.17.1"
     },
     "repository": {
@@ -25,5 +26,6 @@
     "bugs": {
         "url": "https://github.com/Ninghizhidda/SpaceX_Rockets/issues"
     },
-    "homepage": "https://ninghizhidda.github.io/SpaceX_Rockets/"
+    "homepage": "https://ninghizhidda.github.io/SpaceX_Rockets/",
+    "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
