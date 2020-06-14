@@ -88,7 +88,10 @@ class Rocket {
     this.stageNumber = 1;
     this.moveAnimation = anime.timeline({
       targets: '.canvasDiv div',
-      easing: 'easeInOutSine'
+      easing: 'easeInOutSine',
+      translateY: -550,
+      duration: 100000,
+      loop: true
     });
   }
 
