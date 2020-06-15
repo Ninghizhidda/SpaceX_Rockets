@@ -2,7 +2,7 @@ export default class Rockets {
   constructor() {
     this.rocketsArray = [];
   }
-  numberRocketsCreated = () => this.rocketsArray.length;
+  numberRocketsCreated = () => {this.rocketsArray.length}
   numberRocketsStage3 = () => {
     let count = 0
     //console.log(this.rocketsArray[0].stageNumber);
